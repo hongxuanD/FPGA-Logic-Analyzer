@@ -58,13 +58,29 @@ swe1/SWE1-host-requirements.md
 本文件保持为 `README.md`，因为它是目录索引而非过程产物，
 且这个名字在 GitHub 上会自动作为目录首页渲染。
 
+## 管理类过程
+
+阶段划分和风险不属于 SYS/SWE 那两列。ASPICE 把它们放在管理过程里：
+
+| 目录 | 过程 | 内容 |
+| --- | --- | --- |
+| `man3/` | MAN.3 项目管理 | 生命周期模型定义、阶段划分 |
+| `man5/` | MAN.5 风险管理 | 风险登记册，含已关闭的条目 |
+
+需要注意 ASPICE **不是开发方法论**，它是过程评估模型：只要求「定义一个与项目
+规模相称的生命周期并按它管理」，不规定该用瀑布、V 模型还是增量。
+「计划—监控—调整」属于能力等级 2 的属性，横向作用于所有过程，不是某个单独的盒子。
+
 ## 当前进度
 
 | 文档 | 状态 |
 | --- | --- |
-| `sys1/SYS1-stakeholder-requirements.md` | 初稿完成，待评审 |
-| `sys2/SYS2-system-requirements.md` | 初稿完成，待评审 |
-| `sys3/` | 未开始。系统架构，将在此确定 SUMP 协议与 FPGA / 上位机的职责边界 |
-| 其余 | 未开始 |
+| `sys1/SYS1-stakeholder-requirements.md` | 完成，已评审 |
+| `sys2/SYS2-system-requirements.md` | 完成，已评审 |
+| `sys3/SYS3-system-architecture.md` | 完成 |
+| `man3/MAN3-project-plan.md` | 完成 |
+| `man5/MAN5-risk-register.md` | 完成，6 条开放、2 条已关闭 |
+| `swe1/` `swe2/` | 未开始，下一步 |
+| `swe3/` 至 `swe6/`、`traceability/` | 未开始 |
 
-实施阶段划分、可行性推导和待确认事实见 `../PROJECT_CONTEXT.md`。
+`../PROJECT_CONTEXT.md` 只保留入口、共享硬件事实与协作约定，不复制本目录的内容。
