@@ -140,11 +140,12 @@ STM32 与 QN9090／SR150 等设备上的 SPI 通信。
 | 2026-08-12 | 用户 + Claude | 查阅生产固件，核实 QN9090 与 SR150 的 SPI 配置与信号清单。 |
 | 2026-08-12 | 用户 + Claude | 编写 SYS.1 与 SYS.2，按轻量 ASPICE 组织 `docs/`。评审推翻了多条初稿结论。 |
 | 2026-08-12 | 用户 + Claude | 编写 SYS.3。核实 SUMP 支持 XON/XOFF 且波特率可选后，取消自研协议与自研上位机，系统元素由四个减为三个。重排阶段计划，SUMP 提前到阶段 1。拆出 MAN.3 与 MAN.5，精简本文件。 |
+| 2026-08-12 | 用户 + Claude | 从 libsigrok 的 `ols` 驱动源码核实 SUMP 完整规格，记入 SYS.3 的 I4，关闭风险 R-006。命令长度可由 bit7 判断，失步风险的主要来源消除。 |
 
 ## 下一步
 
-1. 编写 `docs/swe1/` 与 `docs/swe2/`，覆盖完整架构。
-2. 在实现前核实 SUMP 的命令字列表与长度、metadata 格式、flags 对每样本字节数的
-   影响，记入 SWE.2。见 `docs/man5/` 的 R-006。
-3. 确定 Pmod 引脚分配，编写 `constraints/` 下的 XDC。
-4. 按 `docs/man3/` 的阶段 1 实现，先做 1a 只应答 ID。
+1. 编写 `docs/swe1/` 与 `docs/swe2/`，覆盖完整架构。SUMP 的协议规格已核实，
+   见 `docs/sys3/` 的 I4 一节。
+2. 确定 Pmod 引脚分配，编写 `constraints/` 下的 XDC。
+3. 按 `docs/man3/` 的阶段 1 实现，先做 1a：应答 `0x00` 复位与 `0x02` ID，
+   回 4 字节 `"1SLO"`。做到这一步 PulseView 就能发现设备。
