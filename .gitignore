@@ -1,0 +1,42 @@
+# Vivado generated project and build artifacts
+build/
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/
+*.xpr
+*.dcp
+*.bit
+*.bin
+*.ltx
+*.wdb
+*.vcd
+*.pb
+*.rpt
+*.jou
+*.log
+*.str
+usage_statistics_webtalk.*
+webtalk.*
+
+# Captured data
+captures/
+*.sr
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
